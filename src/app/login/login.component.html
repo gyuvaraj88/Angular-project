@@ -1,0 +1,13 @@
+<div id="logdiv">
+  <h3>Login</h3>
+  <form #myform="ngForm">
+  Email:<input type="text" [(ngModel)]="email" name="email"  required="required" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #control1="ngModel">
+  <span class="error" *ngIf="control1.invalid&& control1.touched&& control1.errors.required">Email can't be blank</span>
+  <span class="error" *ngIf="control1.invalid&& control1.touched&& control1.errors.pattern">Email is invalid </span><br>
+  Password:<input type="password" [(ngModel)]="password" name="password" required="required" pattern="^[a-zA-Z]\w{3,14}$" #control2="ngModel">
+  <span class="error" *ngIf="control2.invalid&& control2.touched&& control2.errors.required">Password can't be blank</span>
+  <span class="error" *ngIf="control2.invalid&& control2.touched&& control2.errors.pattern">Please enter valid Password </span><br>
+  <input type="submit" value="Login" (click)="onLoginClick(myform)" ><br>
+  {{message}}
+  </form>
+</div>

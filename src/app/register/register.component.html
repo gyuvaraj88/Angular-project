@@ -1,0 +1,73 @@
+<div id="registerDiv">
+  <form>
+<label for="txtEmail">Email:</label>
+<input type="text" id="txtEmail"[(ngModel)]="email" name="email"><br>
+
+<label for="txtPersonname">Person Name:</label>
+<input type="text" id="txtPersonname"[(ngModel)]="personname" name="personname"><br>
+
+<label for="txtPassword">Password:</label>
+<input type="password" id="txtPassword"[(ngModel)]="password" name="password"><br>
+
+<label for="txtMobile">Mobile:</label>
+<input type="text" id="txtMobile"[(ngModel)]="mobile" name="mobile"><br>
+
+<label for="txtDate">Date of Birth:</label>
+<input type="text" id="txtDate"[(ngModel)]="dateofbirth" name="date" size="4">
+<input type="text" id="txtMonth"[(ngModel)]="monthofbirth" name="month" size="4">
+<span [ngSwitch]="monthofbirth">
+  <span *ngSwitchCase="1">Jan</span>
+  <span *ngSwitchCase="2">Feb</span>
+  <span *ngSwitchCase="3">Mar</span>
+  <span *ngSwitchCase="4">Apr</span>
+  <span *ngSwitchCase="5">May</span>
+  <span *ngSwitchCase="6">Jun</span>
+  <span *ngSwitchCase="7">Jul</span>
+  <span *ngSwitchCase="8">Aug</span>
+  <span *ngSwitchCase="9">Sep</span>
+  <span *ngSwitchCase="10">Oct</span>
+  <span *ngSwitchCase="11">Nov</span>
+  <span *ngSwitchCase="12">Dec</span>
+</span>
+<input type="text" id="txtYear"[(ngModel)]="yearofbirth" name="year" size="4"><br>
+
+<label for="txtAmount">Amount:</label>
+<input type="text" id="txtAmount"[(ngModel)]="amount" name="amount"><br>
+
+<input type="checkbox" id="chkNewsLetter"[(ngModel)]="receivenewsletter" value="yes" name="receivesnewsletter">
+<label for="chkNewsLetter">Receive News Letter</label><br>
+
+<label for="txtGender">Gender</label>
+
+<input type="radio" id="rbMale"[(ngModel)]="male" value="male" name="gender">
+<label for="rbMale">Male</label>
+
+<input type="radio" id="rbFemale"[(ngModel)]="female" value="female"name="gender">
+<label for="rbFemale">Female</label>
+
+<input type="radio" id="rbothers"[(ngModel)]="other" value="other" name="gender">
+<label for="rbothers">Other</label><br>
+
+<label for="drpCountry">Country</label>
+<select [(ngModel)]="country" name="country">
+<option>Please Select</option>
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+<option>China</option>
+</select> <br>
+
+
+<input type="submit" value="Register"(click)="onRegisterClick()">
+<input type="reset"><br>
+<div *ngIf="shouldDisplayMessage">
+<div *ngIf="!isSuccessfullyRegistered;then template1;else template2"> </div>
+</div>
+<ng-template #template1>
+  <p>Successfully Registered</p>
+</ng-template>
+<ng-template #template2>
+    <p>Registered failed</p>
+  </ng-template>
+</form>
+</div>

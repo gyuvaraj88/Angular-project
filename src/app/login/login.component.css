@@ -1,0 +1,26 @@
+#logdiv
+{
+    background-color:#d8cdcd;
+    width:400px;
+    height:130px;
+    margin:auto;
+    text-align: center;
+}
+
+
+input.ng-invalid.ng-touched
+{
+    border:2px solid red;
+}
+
+input.ng-valid
+{
+
+    border:2px solid green;
+}
+
+
+.error
+{
+  color: red;
+}
